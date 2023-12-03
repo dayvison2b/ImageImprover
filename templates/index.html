@@ -27,25 +27,21 @@
         {% endif %}
     </div>
     <script>
-        // JavaScript para aguardar a seleção de arquivo antes de fazer o POST
-        document.getElementById('fileInput').addEventListener('click', function() {
+        document.getElementById('fileSubmit').addEventListener('click', function() {
             var fileInput = document.getElementById('fileInput');
             fileInput.click();
-            
-            // Adiciona um ouvinte de evento para verificar se um arquivo foi escolhido
-            fileInput.addEventListener('change', function() {
-                // Verifica se um arquivo foi selecionado
-                if (fileInput.files.length > 0) {
-                    // Se um arquivo foi escolhido, faz o POST
-                    document.getElementById('fileSubmit').click();
-                } else {
-                    // Se nenhum arquivo foi escolhido, você pode exibir uma mensagem ou tomar outra ação
-                    console.log("Nenhum arquivo selecionado.");
-                }
-            });
-            // Dispara o clique no elemento de entrada de arquivo
-            fileInput.click();
         });
-    </script>    
+    
+        document.getElementById('fileInput').addEventListener('change', function() {
+            var fileInput = document.getElementById('fileInput');
+    
+            if (fileInput.files.length > 0) {
+                document.getElementById('fileSubmit').click();
+            } else {
+                console.log("Nenhum arquivo selecionado.");
+            }
+        });
+    </script>
+      
 </body>
 </html>
