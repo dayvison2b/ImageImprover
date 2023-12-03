@@ -17,10 +17,11 @@
         {% endif %}
         <form action="/" method="post" enctype="multipart/form-data">
             <!-- Hidden file input -->
-            <label for="fileInput" class="fileInputLabel">Choose a file</label>
-            <input type="file" name="file" id="fileInput" accept="image/*">
-            <!-- Submit button styled the same as the "Choose a file" label -->
-            <input type="submit" value="Upload" class="fileInputLabel">
+            <input type="file" name="file" id="fileInput" accept="image/*" style="display: none;">
+            <!-- Combined "Choose a file" and "Upload" button -->
+            <button type="button" onclick="document.getElementById('fileInput').click()" class="fileInputLabel">Choose a file and Upload</button>
+            <!-- Submit button (hidden, but will be triggered by the combined button) -->
+            <input type="submit" value="Upload" style="display: none;">
         </form>
         {% if filename %}
             <div class="uploaded-image">
@@ -29,5 +30,12 @@
             </div>
         {% endif %}
     </div>
+
+    <script>
+        // JavaScript to trigger file input when the combined button is clicked
+        document.querySelector('.fileInputLabel').addEventListener('click', function() {
+            document.getElementById('fileInput').click();
+        });
+    </script>
 </body>
 </html>
