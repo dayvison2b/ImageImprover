@@ -29,24 +29,16 @@
     <script>
         document.getElementById('fileSubmit').addEventListener('click', function() {
             var fileInput = document.getElementById('fileInput');
-
-            if (fileInput.files.length > 0) {
-                // Se um arquivo foi escolhido, faz o POST
-                document.getElementById('uploadForm').submit();
-            } else {
-                console.log("Nenhum arquivo selecionado.");
-            }
+            fileInput.click();
         });
     
         document.getElementById('fileInput').addEventListener('change', function() {
             var fileInput = document.getElementById('fileInput');
     
             if (fileInput.files.length > 0) {
-                // Se um arquivo foi escolhido, habilita o botão de upload
-                document.getElementById('fileSubmit').disabled = false;
+                // Se um arquivo foi escolhido, faz o POST
+                document.getElementById('uploadForm').submit();
             } else {
-                // Se nenhum arquivo foi escolhido, desabilita o botão de upload
-                document.getElementById('fileSubmit').disabled = true;
                 console.log("Nenhum arquivo selecionado.");
             }
         });
