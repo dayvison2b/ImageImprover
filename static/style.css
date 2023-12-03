@@ -19,7 +19,7 @@ form {
     margin-top: 20px;
 }
 
-.fileInputLabel {
+#fileSubmit {
     background-color: #4caf50;
     color: #fff;
     padding: 10px 20px;
