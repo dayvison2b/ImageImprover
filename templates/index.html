@@ -9,12 +9,6 @@
 <body>
     <div class="container">
         <h1>Cyberpunk Image Upload</h1>
-        {% if success %}
-            <div class="success">{{ success }}</div>
-        {% endif %}
-        {% if error %}
-            <div class="error">{{ error }}</div>
-        {% endif %}
         <form action="/" method="post" enctype="multipart/form-data">
             <input type="file" name="file" accept="image/*">
             <input type="submit" value="Upload">
