@@ -28,8 +28,8 @@ def upload_file():
             file.save(filename)
             return render_template('index.html', success='File uploaded successfully', filename=filename)
         
-        else:
-            return render_template('index.html', error='Invalid file type')
+        #else:
+            #return render_template('index.html', error='Invalid file type')
     return render_template('index.html')
 
 if __name__ == '__main__':
