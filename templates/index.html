@@ -16,9 +16,7 @@
             <div class="error">{{ error }}</div>
         {% endif %}
         <form action="/" method="post" enctype="multipart/form-data">
-            <!-- Hidden file input -->
             <input type="file" name="file" id="fileInput" accept="image/*" style="display: none;">
-            <!-- Submit button (hidden, but will be triggered by the combined button) -->
             <input type="submit" id="fileSubmit" value="Upload"">
         </form>
         {% if filename %}
@@ -30,7 +28,7 @@
     </div>
     <script>
         // JavaScript para aguardar a seleção de arquivo antes de fazer o POST
-        document.querySelector('.fileInputLabel').addEventListener('click', function() {
+        document.getElementById('fileInput').addEventListener('click', function() {
             // Obtém o elemento de entrada de arquivo
             var fileInput = document.getElementById('fileInput');
     
