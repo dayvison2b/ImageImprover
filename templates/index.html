@@ -36,6 +36,11 @@
         document.querySelector('.fileInputLabel').addEventListener('click', function() {
             document.getElementById('fileInput').click();
         });
+
+        // Ensure that the file input value is cleared when a file is selected
+        document.getElementById('fileInput').addEventListener('change', function() {
+            this.value = null;
+        });
     </script>
 </body>
 </html>
